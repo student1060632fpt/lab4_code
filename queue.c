@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include "queue.h"
 #include <pthread.h>
@@ -26,6 +25,8 @@ struct pcb_t * de_queue(struct pqueue_t * q) {
 
 	return proc;
 }
+
+
 
 /* Put PCB of a process to the queue. */
 void en_queue(struct pqueue_t * q, struct pcb_t * proc) {

@@ -5,32 +5,63 @@
 #include <pthread.h>
 
 /* The PCB of a process */
-struct pcb_t {
+struct pcb_t
+{
 	/* Values initialized for each process */
-	int arrival_time; 	// The timestamp at which process arrives
-				// and wishes to start
+	int arrival_time; // The timestamp at which process arrives
+										// and wishes to start
 	int burst_time;		// The amount of time that process requires
-				// to complete its job
-	int pid;		// process id
+										// to complete its job
+	int pid;					// process id
 };
 
 /* 'Wrapper' of PCB in a queue */
-struct qitem_t {
-	struct pcb_t * data;
-	struct qitem_t * next;	
+struct qitem_t
+{
+	struct pcb_t *data;
+	struct qitem_t *next;
 };
+
+//khúc này thầy chỉ
+//-----
+// struct qitem temp {
+// temp = q->head
+// q->head=q->head->time
+// q->tail=NULL
+// return term->data
+// }
+//-----
+
+//thầy chỉ tiếp cách cấp phát qq gì đó
+//chỗ này chỉ ghi mã giả mà thôi
+//----
+// struct qitem_t temp 
+// =struct qitem
+// malloc(sizeof_)
+// temp->data=process mà mình đang thao tác
+// // process trong file stucts dòng 14  
+// temp->next = NULL
+// if(empty(_)){
+// 	q->tail=q->head=temp
+// } else {
+// 	q->tail = q->tail->next;
+// }
+//---
+//khi chúng ta lấy thì chúng ta lấy cái đầu nên khi thêm cái mới phải cắt liên kết xong xuôi rồi trỏ về bảng ở bên đây
+// về xem kiến trúc dl để hiểu về mặt ý tưởng
+//
+
 
 /* The 'queue' used for both ready queue and in_queue (e.g. the list of
  * processes that will be loaded in the future) */
-struct pqueue_t {
+struct pqueue_t
+{
 	/* HEAD and TAIL for queue */
-	struct qitem_t * head;
-	struct qitem_t * tail;
+	struct qitem_t *head;
+	struct qitem_t *tail;
 	/* MUTEX used to protect the queue from
 	 * being modified by multiple threads*/
 	pthread_mutex_t lock;
 };
 
 #endif
-
-

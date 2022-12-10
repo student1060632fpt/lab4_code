@@ -26,6 +26,12 @@ void * cpu(void * arg) {
 		if (proc == NULL) {
 			/* If there is no process in the queue then we
 			 * wait until the next time slice */
+			if(proc -> burst_time <= timeslot){
+				exec_time = burstime
+				proc->bursttime = 0
+			} else {
+				proc<->
+			}
 			timestamp++;
 			usleep(TIME_UNIT);
 		}else{
