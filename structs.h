@@ -47,9 +47,6 @@ struct qitem_t
 // 	q->tail = q->tail->next;
 // }
 //---
-//khi chúng ta lấy thì chúng ta lấy cái đầu nên khi thêm cái mới phải cắt liên kết xong xuôi rồi trỏ về bảng ở bên đây
-// về xem kiến trúc dl để hiểu về mặt ý tưởng
-//
 
 
 /* The 'queue' used for both ready queue and in_queue (e.g. the list of
