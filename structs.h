@@ -47,7 +47,7 @@ struct qitem_t
 // 	q->tail = q->tail->next;
 // }
 //---
-
+// chịu khó search nhẹ 1 xíu thì sẽ giải đc phần này
 
 /* The 'queue' used for both ready queue and in_queue (e.g. the list of
  * processes that will be loaded in the future) */

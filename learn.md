@@ -4,4 +4,3 @@ khi chúng ta lấy thì chúng ta lấy cái đầu nên khi thêm cái mới p
  về mặt ưu tiên thì số nhỏ thì ưu tiên cao nhất, những cái nào là 0 -> độ ưu tiên cao nhất
  những cái mình thêm vào thì sẽ cộng độ ưu tiên 0 -> +1
 
- 
